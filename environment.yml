@@ -2,3 +2,5 @@ name: financial-rag
 dependencies:
   - python=3.12
   - pip
+  - pip:
+    - pypdf==6.21.2
