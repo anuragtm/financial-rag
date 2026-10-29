@@ -19,9 +19,9 @@ search_words = query_words - stop_words
 
 print("Words used for ranking:", sorted(search_words))
 
-#now counting how many of those words appear on one page, before ranking all pages
+#scanning all pages and selectin top 5
 
-project_folder  = Path(__file__).resolve().parent
+project_folder = Path(__file__).resolve().parent
 json_path = project_folder / "data" / "processed" / "visa_2025_pages.json"
 
 with json_path.open("r", encoding="utf-8") as file:
@@ -35,15 +35,11 @@ for page_record in pages:
     score = len(matched_words)
 
     if score > 0:
-        results.append({
-            "source_file": page_record["source_file"],
-            "pdf_page": page_record["pdf_page"],
-            "score": score,
-            "matched_words": sorted(matched_words),
+        results.append({"source_file": page_record["source_file"], "pdf_page": page_record["pdf_page"],
+            "score": score, "matched_words": sorted(matched_words),
         })
 
 results.sort(key=lambda result: (-result["score"], result["pdf_page"]))
-
 print("\nTop 5 pages:")
 
 for result in results[:5]:
@@ -55,3 +51,12 @@ for result in results[:5]:
 
 if not results:
     print("No matching pages.")
+
+
+# since page 21 and page 43 got the most score lets inspect them before juding them(2 highest ranked pages)
+
+for result in results[:2]:
+    page_record = pages[result["pdf_page"] -1]
+
+    print("\n--- PDF page:", result["pdf_page"], "---")
+    print(page_record["text"])
