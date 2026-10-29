@@ -40,3 +40,17 @@ Do not count this example as an unseen final test question
 - Query: How much did Visa's net revenue grow in 2025?
 - Result: 0 matching pages.
 - Limitation: exact-phrase matching misses relevant evidence when the question's wording does not appear verbatim in the document.
+
+
+## Word-overlap ranking baseline(based on rank_pages.py)
+- Query: How much did Visa's net revenue grow in 2025? (my question for all testing)
+- Top 5 PDF pages(high scored) : Page 21, 43, 4, 6, 7
+- Pages 21 and 43 scored 5 but did not contain the required revenue figures or actual year-over-year increase.
+- Page 4 ranked third and contained both required revenue figures.
+- Verified statement i.e. Page 75 scored 4 and was outside the top five.
+- our current methosd is unique-word overlapping scoring(jaccard index)
+
+
+## Observed Limitation
+Matching all query words does not establish that a page answers the question. Words can occur in unrelated contexts on the same page. Equal scores are resolved by page number, not evidence quality.
+- RAG needs evidence that supports the answer, not just matching words.
