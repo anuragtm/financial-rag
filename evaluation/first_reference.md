@@ -54,3 +54,17 @@ Do not count this example as an unseen final test question
 ## Observed Limitation
 Matching all query words does not establish that a page answers the question. Words can occur in unrelated contexts on the same page. Equal scores are resolved by page number, not evidence quality.
 - RAG needs evidence that supports the answer, not just matching words.
+
+## BM25 baseline
+- Same question and 136-page collection.
+- Top five PDF pages: 21, 44, 22, 60, 61.
+- Pages 21, 44, and 22 discuss related topics but do not answer the question about actual 2025 revenue growth.
+- Pages 60 and 61 contain the required revenue figures.
+- First supporting result: rank 4, versus rank 3 for word overlap.
+- BM25 did not improve first-supporting-result rank on this example.
+
+## Additional failure observations
+- Related financial language is not sufficient evidence.
+- Market opportunity figures must not be mistaken for company revenue.
+- BM25 does not require every query word to match.
+- One development question cannot establish overall retrieval quality.
