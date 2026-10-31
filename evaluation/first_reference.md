@@ -68,3 +68,11 @@ Matching all query words does not establish that a page answers the question. Wo
 - Market opportunity figures must not be mistaken for company revenue.
 - BM25 does not require every query word to match.
 - One development question cannot establish overall retrieval quality.
+
+## BM25 wording-sensitivity check
+- Original question: first supporting evidence at rank 4.
+- Rephrased question naming both years: supporting evidence at rank 1.
+- Keywords "Visa net revenue 2024 2025": supporting evidence at rank 1.
+- The same underlying information need produced different rankings.
+- Several query terms changed, so no single cause was isolated.
+- These are variations of one development example, not three independent test questions. Keep all results, including the weaker original resul

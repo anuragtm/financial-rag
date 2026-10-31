@@ -69,9 +69,3 @@ else:
             "| Score:", round(result["score"], 3)
         )
 
-    # Inspect unfamiliar pages returned by BM25.
-    for pdf_page in [44, 22]:
-        page_record = pages[pdf_page - 1]
-
-        print("\n--- PDF page:", pdf_page, "---")
-        print(page_record["text"])
