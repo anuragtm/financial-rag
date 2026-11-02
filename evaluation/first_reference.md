@@ -76,3 +76,15 @@ Matching all query words does not establish that a page answers the question. Wo
 - The same underlying information need produced different rankings.
 - Several query terms changed, so no single cause was isolated.
 - These are variations of one development example, not three independent test questions. Keep all results, including the weaker original resul
+
+## Question 2: Net income
+
+Question: What was Visa's net income in fiscal 2025?
+
+Expected answer: $20,058 million.
+Source: visa_2025_annual_report.pdf
+Evidence: PDF page 75, printed page 60.
+Table: Consolidated Statements of Operations.
+Row: Net income. Column: 2025.
+
+BM25 top 5 pages: Not tested yet.

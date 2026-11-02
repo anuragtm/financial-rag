@@ -69,3 +69,7 @@ else:
             "| Score:", round(result["score"], 3)
         )
 
+# Temporarily inspect the highest-ranked page for this question.
+page_record = pages[5]
+print("\n--- PDF page 6 ---")
+print(page_record["text"])
