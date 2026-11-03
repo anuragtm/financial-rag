@@ -70,6 +70,6 @@ else:
         )
 
 # Temporarily inspect the highest-ranked page for this question.
-page_record = pages[5]
-print("\n--- PDF page 6 ---")
+page_record = pages[102]
+print("\n--- PDF page 103 ---")
 print(page_record["text"])

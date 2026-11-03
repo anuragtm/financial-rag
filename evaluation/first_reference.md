@@ -88,3 +88,9 @@ Table: Consolidated Statements of Operations.
 Row: Net income. Column: 2025.
 
 BM25 top 5 pages: Not tested yet.
+
+Rank 2 check — PDF page 103 (printed page 88):
+Mentions consolidated net income but does not give its value.
+The $2,424 million table total refers to assets, not net income.
+Neither of the first two results supports the answer.
+Ranks 3–5 have not been checked yet.
