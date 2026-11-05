@@ -13,7 +13,7 @@ print("Page records loaded:", len(pages))
 
 # we gonna turn each pages text into a list of words
 
-stop_words = {"how", "much", "did", "in", "s", "the", "a", "an"}
+stop_words = {"how", "much", "did", "in", "s", "the", "a", "an", "what", "was"}
 
 tokenized_pages = []
 for page_record in pages:
@@ -60,6 +60,13 @@ else:
     results.sort(
         key=lambda result: (-result["score"], result["pdf_page"])
     )
+
+    # we now try to find the rank of our verified evidence page, cause it missed thetop 5
+    for rank, result in enumerate(results, start=1):
+        if result["pdf_page"] == 75:
+            print("Verified PDF page 75 ranked:", rank)
+            break
+
 
     print("\nTop 5 BM25 pages:")
 

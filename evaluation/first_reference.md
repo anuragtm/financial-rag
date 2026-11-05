@@ -108,3 +108,9 @@ Hit@5 = 0 for this question.
 Verified evidence exists on PDF page 75: $20,058 million.
 
 Limitation: This result concerns one question, not overall BM25 performance.
+
+
+Verified evidence page 75 ranked 33rd out of 136 pages.
+It's BM25 score was approx 4.995
+no supporting evidence was found in the top five results (Hit@5 = 0)
+Other supporting pages may exist outside the inspected results.
