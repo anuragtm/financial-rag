@@ -68,8 +68,10 @@ else:
             "PDF page:", result["pdf_page"],
             "| Score:", round(result["score"], 3)
         )
+    #display the text of the five highest-ranked pahges.
+    for result in results[:5]:
+        pdf_page = result["pdf_page"]
+        page_record = pages[pdf_page - 1]
 
-# Inspect the third-ranked page for the net income question.
-page_record = pages[62]
-print("\n--- PDF page 63 ---")
-print(page_record["text"])
+        print("\n--- PDF page:", pdf_page, "---")
+        print(page_record["text"])

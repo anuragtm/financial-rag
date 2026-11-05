@@ -94,3 +94,17 @@ Mentions consolidated net income but does not give its value.
 The $2,424 million table total refers to assets, not net income.
 Neither of the first two results supports the answer.
 Ranks 3–5 have not been checked yet.
+
+Rank 3 check — PDF page 63:
+Reports non-operating income and effective income tax rates.
+The $200 million figure is not total net income.
+No supporting answer found in the first three results.
+
+Rank 4 — PDF page 102: Derivatives and hedging figures; no total net income.
+Rank 5 — PDF page 30: Business overview and workforce; no total net income.
+
+Result: No supporting evidence in the top five retrieved pages.
+Hit@5 = 0 for this question.
+Verified evidence exists on PDF page 75: $20,058 million.
+
+Limitation: This result concerns one question, not overall BM25 performance.
