@@ -5,4 +5,4 @@ dependencies:
   - pip:
     - pypdf==6.21.2
     - rank-bm25==0.2.2
-    
+    - transformers==5.22.2
