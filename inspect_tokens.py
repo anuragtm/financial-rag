@@ -1,4 +1,6 @@
 import json
+import re
+
 from pathlib import Path
 
 
@@ -21,6 +23,13 @@ with chunk_path.open("r", encoding="utf-8") as file:
     chunk = json.load(file)
 
 chunk_tokens = load_tokenizer.tokenize(chunk["text"])
-
 print("\n Chunk text:", chunk["text"])
 print("Chunk token count:", len(chunk_tokens))
+
+
+clean_text = re.sub(r"\.{3}", " ", chunk["text"])
+clean_tokens = load_tokenizer.tokenize(clean_text)
+
+print("\nCleaned chunk:", clean_text)
+print("Tokens before cleaning:", len(chunk_tokens))
+print("Tokens after cleaning:", len(clean_tokens))
