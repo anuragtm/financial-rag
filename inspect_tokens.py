@@ -27,7 +27,7 @@ print("\n Chunk text:", chunk["text"])
 print("Chunk token count:", len(chunk_tokens))
 
 
-clean_text = re.sub(r"\.{3}", " ", chunk["text"])
+clean_text = re.sub(r"\.{3,}", " ", chunk["text"])  #here we find matching text and replace it(find 3 or more dots)
 clean_tokens = load_tokenizer.tokenize(clean_text)
 
 print("\nCleaned chunk:", clean_text)
