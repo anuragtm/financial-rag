@@ -1,9 +1,7 @@
+
 import json
 import re
-
 from pathlib import Path
-
-
 from transformers import AutoTokenizer
 
 load_tokenizer = AutoTokenizer.from_pretrained("BAAI/bge-small-en-v1.5")
@@ -33,3 +31,8 @@ clean_tokens = load_tokenizer.tokenize(clean_text)
 print("\nCleaned chunk:", clean_text)
 print("Tokens before cleaning:", len(chunk_tokens))
 print("Tokens after cleaning:", len(clean_tokens))
+
+
+#handles two specific inputs
+##The sentence i typed into the code.
+##The single practice chunk I previously selected from page 75.
