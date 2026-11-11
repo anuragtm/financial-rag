@@ -114,3 +114,15 @@ Verified evidence page 75 ranked 33rd out of 136 pages.
 It's BM25 score was approx 4.995
 no supporting evidence was found in the top five results (Hit@5 = 0)
 Other supporting pages may exist outside the inspected results.
+
+
+## Initial automatic chunking
+
+- Prepared 136 PDF pages and created 304 chunks.
+- Grouped complete lines within each page, up to 400 text tokens.
+- Counted tokens using the BGE small English v1.5 tokenizer.
+- PDF page 75 produced chunk 169 (385 tokens) and chunk 170 (162 tokens).
+- Chunk 169 keeps net income together with the years and units.
+- Chunk 170 starts midway through a table section and lacks its year, unitand section headings.
+- These observations cover page 75; other chunks still need inspection.
+- Individual lines exceeding 400 tokens currently stop the script.

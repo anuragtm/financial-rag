@@ -35,7 +35,7 @@ chunks = []
 for page in prepared_pages:
     current_lines = []
 
-    for line in page["text"].splitlines():
+    for line in page["text"].splitlines():  #splitlines() turns it into a list of lines..
         if not line.strip():
             continue
 
@@ -46,7 +46,7 @@ for page in prepared_pages:
                 f"PDF page {page['pdf_page']} has a line with "
                 f"{line_token_count} tokens. This line needs splitting."
             )
-
+            
         candidate_text = "\n".join(current_lines + [line])
         candidate_count = len(tokenizer.tokenize(candidate_text))
 
