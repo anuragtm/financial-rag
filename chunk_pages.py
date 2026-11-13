@@ -46,7 +46,7 @@ for page in prepared_pages:
                 f"PDF page {page['pdf_page']} has a line with "
                 f"{line_token_count} tokens. This line needs splitting."
             )
-            
+
         candidate_text = "\n".join(current_lines + [line])
         candidate_count = len(tokenizer.tokenize(candidate_text))
 
@@ -84,3 +84,22 @@ for chunk in chunks:
         print("\nChunk:", chunk["chunk_id"])
         print("Text tokens:", chunk["token_count"])
         print(chunk["text"])
+
+
+#now imma save all my 304 chunks to JSON file
+
+output_path = json_path.parent / "visa_2025_chunks.json"
+with output_path.open("w", encoding="utf-8") as file:
+    json.dump(chunks, file, ensure_ascii=False, indent=2)
+
+print("Chunks saved:", len(chunks))
+print("Saved to:", output_path)
+
+#next to check all304 chunks fit our token limit
+
+largest_chunk = max(chunk["token_count"] for chunk in chunks)
+oversized_chunks = [chunk for chunk in chunks
+    if chunk["token_count"] > max_chunk_tokens]
+
+print("Largest chunk token count:", largest_chunk)
+print("Chunks over the limit:", len(oversized_chunks))
