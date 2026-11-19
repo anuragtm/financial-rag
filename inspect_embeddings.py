@@ -7,3 +7,13 @@ embedding = model.encode(text, normalize_embeddings=True)
 print("Original text:", text)
 print("Embedding shape:", embedding.shape)
 print("First 5 numbers:", embedding[:5])
+
+texts = [
+    "Visa's net income was $20,058 million in 2025.",
+    "Visa's net revenue was $40,000 million in 2025.",
+]
+
+embeddings = model.encode(texts, normalize_embeddings=True)
+
+print("Number of texts:", len(texts))
+print("Embeddings shape:", embeddings.shape)
