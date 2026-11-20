@@ -126,3 +126,14 @@ Other supporting pages may exist outside the inspected results.
 - Chunk 170 starts midway through a table section and lacks its year, unitand section headings.
 - These observations cover page 75; other chunks still need inspection.
 - Individual lines exceeding 400 tokens currently stop the script.
+
+## Initial embedding test
+
+- Tested the embedding model using two sentences about Visa's financial data.
+- Stored both sentences in a Python list called texts.
+- Used model.encode() to generate an embedding for each sentence.
+- Enabled normalize_embeddings=True to normalize the generated embedding vectors.
+- Confirmed that the model produces two embeddings, one for each input sentence.
+- The resulting embedding array has a shape of (2, 384), representing two sentences with 384 dimensions each.
+- The original sentence order is preserved in the resulting embeddings.
+- This was a small test to verify embedding generation before processing all 304 chunks.
