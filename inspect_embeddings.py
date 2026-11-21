@@ -17,3 +17,8 @@ embeddings = model.encode(texts, normalize_embeddings=True)
 
 print("Number of texts:", len(texts))
 print("Embeddings shape:", embeddings.shape)
+
+for text, vector in zip(texts, embeddings):
+    print("\nText:", text)
+    print("Vector length:", len(vector))
+    print("First 3 values:", vector[:3])
