@@ -22,3 +22,7 @@ for text, vector in zip(texts, embeddings):
     print("\nText:", text)
     print("Vector length:", len(vector))
     print("First 3 values:", vector[:3])
+
+similarity = embeddings[0] @ embeddings[1]
+
+print("\nSimilarity score:", float(similarity))
