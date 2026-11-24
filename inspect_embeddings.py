@@ -26,3 +26,7 @@ for text, vector in zip(texts, embeddings):
 similarity = embeddings[0] @ embeddings[1]
 
 print("\nSimilarity score:", float(similarity))
+
+for index, vector in enumerate(embeddings, start=1):
+    vector_length = (vector @ vector) ** 0.5
+    print(f"Embedding {index} normalized length:", float(vector_length))
