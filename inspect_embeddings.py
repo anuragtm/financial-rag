@@ -30,3 +30,16 @@ print("\nSimilarity score:", float(similarity))
 for index, vector in enumerate(embeddings, start=1):
     vector_length = (vector @ vector) ** 0.5
     print(f"Embedding {index} normalized length:", float(vector_length))
+
+    
+unrelated_text = "The weather will be cold and snowy tomorrow."
+
+unrelated_embedding = model.encode(
+    unrelated_text,
+    normalize_embeddings=True
+)
+
+unrelated_similarity = embeddings[0] @ unrelated_embedding
+
+print("\nUnrelated text:", unrelated_text)
+print("Similarity with net income text:", float(unrelated_similarity))
