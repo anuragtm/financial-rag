@@ -1,9 +1,15 @@
 from sentence_transformers import SentenceTransformer
 
-model = SentenceTransformer("BAAI/bge-small-en-v1.5", device = "cpu")
+model = SentenceTransformer(
+        "BAAI/bge-small-en-v1.5",
+        device = "cpu")
+
 text = "Visa's net income was $20,058 million in 2025."
 
-embedding = model.encode(text, normalize_embeddings=True)
+embedding = model.encode(
+     text,
+     normalize_embeddings=True)
+
 print("Original text:", text)
 print("Embedding shape:", embedding.shape)
 print("First 5 numbers:", embedding[:5])
@@ -13,7 +19,9 @@ texts = [
     "Visa's net revenue was $40,000 million in 2025.",
 ]
 
-embeddings = model.encode(texts, normalize_embeddings=True)
+embeddings = model.encode(
+    texts,
+     normalize_embeddings=True)
 
 print("Number of texts:", len(texts))
 print("Embeddings shape:", embeddings.shape)
@@ -27,6 +35,7 @@ similarity = embeddings[0] @ embeddings[1]
 
 print("\nSimilarity score:", float(similarity))
 
+#verify normalization
 for index, vector in enumerate(embeddings, start=1):
     vector_length = (vector @ vector) ** 0.5
     print(f"Embedding {index} normalized length:", float(vector_length))
@@ -34,11 +43,11 @@ for index, vector in enumerate(embeddings, start=1):
     
 unrelated_text = "The weather will be cold and snowy tomorrow."
 
+#unintentional comparison
 unrelated_embedding = model.encode(
     unrelated_text,
     normalize_embeddings=True
 )
-
 unrelated_similarity = embeddings[0] @ unrelated_embedding
 
 print("\nUnrelated text:", unrelated_text)
